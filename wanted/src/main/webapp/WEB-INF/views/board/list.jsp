@@ -36,7 +36,7 @@
 					<th>작성일</th>
 				</tr>
 			</thead>
-			<c:forEach items="${lists}" var="board">
+			<c:forEach items="${lists.content}" var="board">
 				<tr>
 					<td>${board.num}</td>
 					<td><a href="/board/detail/${board.num}">${board.title}</a></td>
@@ -48,6 +48,20 @@
 			<tbody>
 			</tbody>
 		</table>
+		<div class="d-flex justify-content-between mt-5 mr-auto">
+			<ul class="pagination">
+				<c:if test="${lists.first==false }">
+					<li class="page-item"><a class="page-link"
+						href="?page=${lists.number-1 }">이전</a></li>
+				</c:if>
+				<c:if test="${lists.last==false }">
+					<li class="page-item"><a class="page-link"
+						href="?page=${lists.number+1 }">다음</a></li>
+
+				</c:if>
+
+			</ul>
+		</div>
 	</div>
 </body>
 </html>
