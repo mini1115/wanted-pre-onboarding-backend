@@ -9,7 +9,7 @@
 >> 회원가입 
 >> 로그인
 
-> 게시글(BOARD) :bulletain:
+> 게시글(BOARD)
 >> 게시글 작성
 >> 게시글 상세보기
 >> 게시글 수정
@@ -18,7 +18,11 @@
 >> 게시글 검색
 ### 데이터베이스 테이블 구조 
 >Member 테이블
+>>![image](https://github.com/mini1115/wanted-pre-onboarding-backend/assets/101314429/8351c0c4-478a-498b-8b50-42021c4e0c73)
+
 >Board 테이블
+>>![image](https://github.com/mini1115/wanted-pre-onboarding-backend/assets/101314429/c3a8d146-ea11-43b5-b682-a9efe7b07a47)
+
 ### 구현한 API의 동작을 촬영한 데모 영상 링크
 >
 ### 구현 방법 및 이유에 대한 간략한 설명
