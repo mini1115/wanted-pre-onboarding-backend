@@ -84,4 +84,5 @@ public class BoardController {
 		boardService.update(board);
 		return "success";
 	}
+	///////
 }
