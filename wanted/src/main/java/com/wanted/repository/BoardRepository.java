@@ -9,11 +9,11 @@ import org.springframework.data.repository.query.Param;
 import com.wanted.model.Board;
 
 public interface BoardRepository extends JpaRepository<Board, Long>{
-
+	
 	public void deleteByNum(Long num);
 	
 	Page<Board> findByTitleContaining(String title,Pageable pageable);
-	Page<Board> findByContentContaining(String title,Pageable pageable);
+	Page<Board> findByContentContaining(String content,Pageable pageable);
 
 	
 	@Query(value="select count(*) from member_board where title like CONCAT('%',:word,'%')",nativeQuery = true)

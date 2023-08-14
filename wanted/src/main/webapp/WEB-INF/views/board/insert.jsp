@@ -1,23 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
-<sec:authorize access="isAuthenticated()">
-	<sec:authentication property="principal" var="principal" />
-</sec:authorize>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<%@include file="../include/header.jsp"%>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<div class="container">
-	<h3>Board Insert</h3>
+<div class="container" style="padding: 40px 20px 40px 20px ">
+	<h3 style="padding: 0px 0px 40px 0px ">게시글 작성</h3>
 	<form action="insert" method="post">
 		<div class="form-group">
 			<label for="title">제목:</label> <input type="text"
@@ -41,3 +28,4 @@
 		</div>
 	</form>
 </div>
+<%@include file="../include/footer.jsp"%>

@@ -26,6 +26,7 @@ public class BoardService {
 	//게시물 리스트
 	public Page<Board> findAll(String field,String word,Pageable pageable){
 //		Page<Board> lists = boardRepository.findAll(pageable);
+
 		if(field.equals("title")) 
 			return boardRepository.findByTitleContaining(word,pageable);
 		if(field.equals("content")) 
