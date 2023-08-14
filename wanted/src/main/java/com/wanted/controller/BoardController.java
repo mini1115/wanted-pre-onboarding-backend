@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.wanted.config.auth.PrincipalDetails;
@@ -49,10 +50,12 @@ public class BoardController {
 //		return "/board/list";
 //	}
 	@GetMapping("list")
-	public String list(Model model,@PageableDefault(size=10,sort="num",direction =Direction.DESC)Pageable pageable) {
-		Page<Board>lists = boardService.findAll(pageable);
+	public String list(Model model,@PageableDefault(size=10,sort="num",direction =Direction.DESC)Pageable pageable,@RequestParam(required = false,defaultValue = "") String field,@RequestParam(required = false,defaultValue = "") String word) {
+		Page<Board>lists = boardService.findAll(field,word,pageable);
+		
+		Long count = boardService.count(field,word);
 		model.addAttribute("lists",lists);
-		model.addAttribute("count", boardService.count());
+		model.addAttribute("count", count);
 		return "/board/list";
 	}
 	//게시글 상세보기

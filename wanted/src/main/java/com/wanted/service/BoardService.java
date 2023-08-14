@@ -1,7 +1,6 @@
 package com.wanted.service;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,12 +23,24 @@ public class BoardService {
 		board.setMember(member);
 		boardRepository.save(board);
 	}
-	
-	public Page<Board> findAll(Pageable pageable){
+	//게시물 리스트
+	public Page<Board> findAll(String field,String word,Pageable pageable){
+//		Page<Board> lists = boardRepository.findAll(pageable);
+		if(field.equals("title")) 
+			return boardRepository.findByTitleContaining(word,pageable);
+		if(field.equals("content")) 
+			return boardRepository.findByContentContaining(word,pageable);
 		return boardRepository.findAll(pageable);
 		 
 	}
-	public Long count() {
+	//게시물 카운트
+	public Long count(String field,String word) {
+		if(field.equals("title")) {
+			return boardRepository.TitleSearch(word);
+		}
+		else if(field.equals("content")) {
+			return boardRepository.ContentSearch(word);
+		}
 		return boardRepository.count();
 	}
 	

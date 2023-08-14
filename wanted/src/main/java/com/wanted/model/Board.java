@@ -19,7 +19,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "member_board")
 public class Board {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long num;
