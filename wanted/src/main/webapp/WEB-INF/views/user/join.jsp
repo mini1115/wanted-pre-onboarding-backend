@@ -10,10 +10,10 @@
 	</div>
 </div>
 
-<div class="container" style="padding: 40px 20px 40px 20px ">
+<div class="container" style="padding: 40px 20px 40px 20px">
 	<div class="form-group">
 		<label for="username">이름:</label> <input type="text"
-			class="form-control" id="username" placeholder="Enter UserID"
+			class="form-control" id="username" placeholder="Enter Name"
 			name="username">
 	</div>
 	<div class="form-group">
@@ -35,14 +35,10 @@
 					function() {
 
 						var regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/
+						var pw = $("#password").val();
 						if ($("#username").val() == "") {
 							alert("아이디를 입력하세요")
 							$("#username").focus();
-							return false;
-						}
-						if ($("#password").val() == "") {
-							alert("아이디를 입력하세요")
-							$("#password").focus();
 							return false;
 						}
 						if ($("#email").val() == "") {
@@ -55,6 +51,18 @@
 							$("#email").focus();
 							return false;
 						}
+						if ($("#password").val() == "") {
+							alert("비밀번호를 입력하세요")
+							$("#password").focus();
+							return false;
+						}
+
+						if (pw.length < 8) {
+							alert("비밀번호는 최소 8자리 입니다.")
+							$("password").focus();
+							return false;
+						}
+
 						var dataParam = {
 							"username" : $("#username").val(),
 							"email" : $("#email").val(),
