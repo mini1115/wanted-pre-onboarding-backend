@@ -38,4 +38,4 @@
 ### 구현 방법 및 이유에 대한 간략한 설명
 > Rest API를 이용한 SpringBoot Jpa,Security를 활용한 회원가입, 로그인, 게시판 CRUD ,RDBMS(Mysql) - Member와 Board 1:N 매핑
 ### API 명세(request/response 포함)
-> Swagger 예정(설정중 에러발생)
+> Swagger 예정
